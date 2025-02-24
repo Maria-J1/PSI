@@ -1,0 +1,67 @@
+#Zadanie 1
+# Stwórz funkcję o nazwie kostka, która będzie symulować n rzutów kostką.
+# Wskazówka: Użyj funkcji sample() do losowania liczby oczek od 1 do 6.
+
+kostka = function(n) {
+    wyniki = sample(1:6,n,replace = TRUE)
+    return(wyniki)
+}
+
+
+#Zadanie 4
+#Stwórz funkcję, która oblicza długość przeciwprostokątnej w trójkącie prostokątnym.
+
+przeciwprostokatna = function(x, y) {
+     z = (x^2 + y^2)^(1/2)
+     return(z)
+}
+
+
+#Zadanie 5
+# Stwórz funkcję będącą najprostszą wersją kalkulatora 
+# (dodawanie, odejmowanie, mnożenie albo dzielenie dwóch liczb).
+
+
+
+
+#Zadanie 6
+# Stwórz funkcję o nazwie przyznaj_nagrode()
+# która symuluje rzut sześcienną kostką do gry i przyznaje nagrodę w zależności od wyniku rzutu. 
+# Funkcja powinna działać według następujących zasad:
+# - Jeśli wyrzucona liczba oczek to 6, funkcja powinna zwrócić komunikat: "Super bonus!"
+# - Jeśli wyrzucona liczba oczek to 4 lub 5, funkcja powinna zwrócić komunikat: "Nagroda standardowa"
+# - Jeśli wyrzucona liczba oczek to 1, 2 lub 3, funkcja powinna zwrócić komunikat: "Brak nagrody..."
+
+przyznaj_nagrode = function() {
+    n = sample(1:6,1,replace = TRUE)
+    if(n == 6) {
+        nagroda = "Super bonus!"
+    } else if (n <= 3) {
+        nagroda = "Brak nagrody..."
+    } else if (n > 3) {
+        nagroda = "Nagroda standardowa"
+    }
+    return(nagroda)
+}
+
+
+#Zadanie 7
+# Stwórz funkcję obliczającą podatek w zależności od dochodu. 
+# Przyjmij następujące założenia:
+# a) Jeżeli podatnik rozlicza się liniowo, wtedy niezależnie od kwoty płaci 19% podatku.
+# b) Jeżeli podatnik rozlicza się na zasadach ogólnych, wtedy:
+# - poniżej kwoty 85528zł płaci 18% podatku minus kwota zmniejszająca, czyli 556zł;
+# - powyżej kwoty 85528zł płaci 14839zł + 32% nadwyżki powyżej 85528zł.
+
+podatek = function(zasada, dochod) {
+    if(zasada == "liniowa") {
+        podatek = dochod * 0.19
+    } else if (zasada == "ogólna"){
+        if(dochod < 85528) {
+            podatek = dochod * 0.18 - 556
+        } else {
+            podatek = 14839 + 0.32 * (dochod - 85528)
+        }
+    }
+    return(podatek)
+}
