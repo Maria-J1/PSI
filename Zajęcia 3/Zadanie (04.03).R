@@ -67,7 +67,7 @@ print(head(freq_df, 10))
 
 
 # Potrzeba dodatkowych stop s??ow do usuni??cia ----
-custom_stopwords <- c("\", "???", "fs", "fre")
+custom_stopwords <- c("Â\", "???", "Âfs", "Âfre")
 
 
 # Usuni??cie dodatkowych stop s??ow z przetworzonego tekstu 
@@ -114,7 +114,7 @@ for (file_path in file_paths) {
 
 
 # Potrzeba dodatkowych stop s??ow do usuni??cia ----
-custom_stopwords <- c("\", "???", "fs", "fre")
+custom_stopwords <- c("Â\", "???", "Âfs", "Âfre")
 
 # Przetwarzanie ka??dego pliku osobno
 for (file_path in file_paths) {
